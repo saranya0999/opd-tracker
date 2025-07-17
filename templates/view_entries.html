@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Entries</title>
+  <style>.dataframe { border-collapse: collapse; } .dataframe td, .dataframe th { border: 1px solid black; padding: 5px; }</style>
+</head>
+<body>
+  <h2>Data for {{ username }}</h2>
+  {% for table in tables %}
+    {{ table|safe }}
+  {% endfor %}
+  <br><a href="/">Back to Form</a>
+</body>
+</html>

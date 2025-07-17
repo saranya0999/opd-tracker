@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: opd-tracker
+    env: python
+    buildCommand: ""
+    startCommand: "gunicorn scalable_app:app"

@@ -1,66 +1,30 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Outpatient Entry with Case Type</title>
-    <style>
-        body { font-family: Arial; background: #f9f9f9; padding: 20px; }
-        .form-box { background: white; padding: 20px; border-radius: 10px; max-width: 800px; margin: auto; }
-        input[type="number"], input[type="date"] { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
-        h2, h3 { color: #333; }
-        table { width: 100%; margin-bottom: 20px; }
-        td { padding: 5px; }
-        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background: #0056b3; }
-    </style>
-</head>
+<head><title>Data Entry</title></head>
 <body>
-    <div class="form-box">
-        <h2>Outpatient Entry - Morning & Evening with Case Type</h2>
-        <form method="POST">
-            <label for="date">Date:</label>
-            <input type="date" name="date" required>
-
-            <h3>Morning Session</h3>
-            <table>
-                <tr><td></td><td>Male</td><td>Female</td><td>Child</td></tr>
-                <tr>
-                    <td>Old Case</td>
-                    <td><input type="number" name="old_m_m" value="0"></td>
-                    <td><input type="number" name="old_f_m" value="0"></td>
-                    <td><input type="number" name="old_c_m" value="0"></td>
-                </tr>
-                <tr>
-                    <td>New Case</td>
-                    <td><input type="number" name="new_m_m" value="0"></td>
-                    <td><input type="number" name="new_f_m" value="0"></td>
-                    <td><input type="number" name="new_c_m" value="0"></td>
-                </tr>
-            </table>
-
-            <h3>Evening Session</h3>
-            <table>
-                <tr><td></td><td>Male</td><td>Female</td><td>Child</td></tr>
-                <tr>
-                    <td>Old Case</td>
-                    <td><input type="number" name="old_m_e" value="0"></td>
-                    <td><input type="number" name="old_f_e" value="0"></td>
-                    <td><input type="number" name="old_c_e" value="0"></td>
-                </tr>
-                <tr>
-                    <td>New Case</td>
-                    <td><input type="number" name="new_m_e" value="0"></td>
-                    <td><input type="number" name="new_f_e" value="0"></td>
-                    <td><input type="number" name="new_c_e" value="0"></td>
-                </tr>
-            </table>
-
-            <button type="submit">Submit</button>
-        </form>
-        <br>
-        <form action="/download_summary" method="get">
-            <button type="submit">Download Summary Report</button>
-        </form>
-    </div>
+  <h2>Daily Abstract Form</h2>
+  <form method="post">
+    Date: <input type="date" name="date" required><br>
+    Session:
+    <select name="session" required>
+      <option value="Morning">Morning</option>
+      <option value="Evening">Evening</option>
+    </select><br>
+    New Case: <input type="number" name="new_case" required><br>
+    Old Case: <input type="number" name="old_case" required><br>
+    Name: <input type="text" name="name" required><br>
+    Age: <input type="number" name="age" required><br>
+    Gender:
+    <select name="gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Male Child">Male Child</option>
+      <option value="Female Child">Female Child</option>
+    </select><br>
+    Diagnosis: <input type="text" name="diagnosis" required><br>
+    <strong>User Name (required):</strong>
+    <input type="text" name="username" required><br><br>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>
